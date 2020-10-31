@@ -6,9 +6,12 @@ export default function Wish(props) {
   const { setView, is5StarItem } = props
   return (
     <>
+{/* 
     <button
-    onClick={() => setView('wish-results')}
-    className="skip-button">Skip</button>
+      onClick={() => setView('wish-results')}
+      className="skip-button">Skip
+    </button> */}
+
     <video
     autoPlay={true}
     className="min-vh-100 w-100 overflow-hidden"
@@ -19,6 +22,14 @@ export default function Wish(props) {
         src={is5StarItem ? fiveStarClip : fourStarClip}
         type="video/mp4"/>
     </video>
+
+    <div
+      onClick={() => setView('wish-results')}
+      className="min-vh-100 w-100 skipFullPage">
+      <p className="text-center text-capitalize font-weight-bold text-white bg-dark">
+        CLICK ANYWHERE TO SKIP
+      </p>
+    </div>
     </>
   )
 }

@@ -9,14 +9,24 @@ export default class WishResults extends Component {
     const { wishes, setView, updateInventory } = this.props
     return (
       <div className="wish-results">
+        
+        <div onClick = {()=> {
+            setView('banners');
+            updateInventory(wishes.map(item => Object.assign({}, item)));
+          }} className="min-vh-100 w-100 skipFullPage">
+            <p className="text-center text-capitalize font-weight-bold text-white bg-dark">
+          CLICK ANYWHERE TO CLOSE
+        </p></div>
+
         <Container>
           <Row className="vh-10">
             <Col xs="12">
               <div className="d-flex justify-content-end mt-2">
-                <div onClick={() => {
+                {/* <div onClick={() => {
                   setView('banners');
                   updateInventory(wishes.map(item => Object.assign({}, item)));
-                }} className="close-button"></div>
+                }} className="close-button"></div> */}
+
               </div>
             </Col>
           </Row>
